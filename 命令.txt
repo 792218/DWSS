@@ -1,0 +1,5 @@
+CUDA_VISIBLE_DEVICES=1 python main.py --folder ./experiments/
+
+CUDA_VISIBLE_DEVICES=1 python main_test.py --folder ./experiments/
+
+CUDA_VISIBLE_DEVICES='1, 0' python -m torch.distributed.launch --master_port=3142 --nproc_per_node=2 main.py --folder ./experiments/
